@@ -37,12 +37,10 @@ angular.module('showTodo').component('showTodo', {
       $scope.showPrevPage = function() {
         $scope.currentPage = $scope.currentPage - 1;
         $scope.startingTodo = $scope.startingTodo - itemsPerPage;
-        $scope.endingTodo = $scope.endingTodo - itemsPerPage;
       };
       $scope.showNextPage = function() {
         $scope.currentPage = $scope.currentPage + 1;
         $scope.startingTodo = $scope.startingTodo + itemsPerPage;
-        $scope.endingTodo = $scope.endingTodo + itemsPerPage;
       }
     }
   ]
