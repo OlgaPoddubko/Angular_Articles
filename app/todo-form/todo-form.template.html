@@ -1,0 +1,10 @@
+<form ng-init="$ctrl.onInit()" name="todoForm" ng-submit="$ctrl.onSubmit(todoText)" novalidate >
+  <input type="text" name="description" placeholder="Description" ng-model="$ctrl.todoText" ng-model-options="{ updateOn: 'blur' }"
+    ng-required="true" ng-minlength="20" />
+  <input type="submit" value="Save" />
+  <br>
+  <div ng-show="todoForm.$submitted">
+    <span ng-show="todoForm.description.$error.minlength">Todo cannot be less than 20 characters long.</span>
+    <span ng-show="todoForm.description.$error.required">Todo title is required.</span>
+  </div>
+</form>

@@ -1,0 +1,21 @@
+<h3>Active {{ todos.length }}</h3>
+<h3>Select sorting</h3>
+<button ng-click="sortBy('text')">sort by text</button>
+<button ng-click="sortBy('created | todoDays')">sort by date</button>
+<button ng-click="sortParam = null">set to unsorted</button>
+
+<span ng-if="todos.length == 0">You have no active todos!</span>
+
+<h3>Todos:</h3>
+
+<ul ng-repeat="todo in todos | limitTo: endingTodo : startingTodo">
+  <li>
+    {{ todo.id }} <a href="#!/edit/{{todo.id}}">{{ todo.text }} </a><br> {{ todo.created | date: 'mediumDate' }} -- {{todo.created | todoDays}} days ago <br>
+    <button ng-click="toggleDone(todo)">completed: {{todo.done}}</button>
+    <button ng-click="removeTodo(todo)">remove todo</button>
+  </li>
+</ul>
+
+<button ng-if="currentPage !== 0" ng-click="showPrevPage()">prev</button>
+<span>{{currentPage+1}} out of {{numberOfPages()}}</span>
+<button ng-if="currentPage !== numberOfPages() - 1" ng-click="showNextPage()">next</button>
