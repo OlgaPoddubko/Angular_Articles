@@ -9,10 +9,11 @@ angular.module("editTodo").component("editTodo", {
         return todo.id === +$routeParams.id;
       });
 
-      this.editTodo = function(todoText) {
+      this.editTodo = function(todoText, todoContent) {//
         todoFactory.editTodo({
           ...this.todo,
-          text: todoText
+          text: todoText,
+          content: todoContent//
         });
         $location.path("/");
       };

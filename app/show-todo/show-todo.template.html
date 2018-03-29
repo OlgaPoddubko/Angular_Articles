@@ -10,7 +10,9 @@
 
 <ul ng-repeat="todo in todos | limitTo: limit : startingTodo">
   <li>
-    {{ todo.id }} <a href="#!/edit/{{todo.id}}">{{ todo.text }} </a><br> {{ todo.created | date: 'mediumDate' }} -- {{todo.created | todoDays}} days ago <br>
+    {{ todo.id }} <a href="#!/edit/{{todo.id}}">{{ todo.text }} </a><br>
+    {{ todo.content }}
+    {{ todo.created | date: 'mediumDate' }} -- {{todo.created | todoDays}} days ago <br>
     <button ng-click="toggleDone(todo)">completed: {{todo.done}}</button>
     <button ng-click="removeTodo(todo)">remove todo</button>
   </li>

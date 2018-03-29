@@ -11,10 +11,11 @@ export default $resource => {
     getTodos() {
       return todoList;
     },
-    addTodo(text) {
+    addTodo(text, content) {
       todoList.push({
         id: Date.now(),
         text,
+        content,
         created: new Date().toJSON(),
         done: false
       });

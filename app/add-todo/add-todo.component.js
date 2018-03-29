@@ -4,8 +4,8 @@ angular.module("addTodo").component("addTodo", {
     "todoFactory",
     "$location",
     function(todoFactory, $location) {
-      this.addTodo = function(todoText) {
-        todoFactory.addTodo(todoText);
+      this.addTodo = function(todoText, todoContent) {
+        todoFactory.addTodo(todoText, todoContent);
         $location.path("/");
       };
     }
