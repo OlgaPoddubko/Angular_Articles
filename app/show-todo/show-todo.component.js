@@ -26,21 +26,20 @@ angular.module('showTodo').component('showTodo', {
 
       /*pagination*/
       $scope.startingTodo = 0;
-      $scope.endingTodo = 4;
+      $scope.limit = 4;
       $scope.currentPage = 0;
-      let itemsPerPage = 4;
 
       $scope.numberOfPages = () => {
-        return Math.ceil($scope.todos.length / itemsPerPage);
+        return Math.ceil($scope.todos.length / $scope.limit);
       };
 
       $scope.showPrevPage = function() {
         $scope.currentPage = $scope.currentPage - 1;
-        $scope.startingTodo = $scope.startingTodo - itemsPerPage;
+        $scope.startingTodo = $scope.startingTodo - $scope.limit;
       };
       $scope.showNextPage = function() {
         $scope.currentPage = $scope.currentPage + 1;
-        $scope.startingTodo = $scope.startingTodo + itemsPerPage;
+        $scope.startingTodo = $scope.startingTodo + $scope.limit;
       }
     }
   ]

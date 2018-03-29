@@ -8,7 +8,7 @@
 
 <h3>Todos:</h3>
 
-<ul ng-repeat="todo in todos | limitTo: endingTodo : startingTodo">
+<ul ng-repeat="todo in todos | limitTo: limit : startingTodo">
   <li>
     {{ todo.id }} <a href="#!/edit/{{todo.id}}">{{ todo.text }} </a><br> {{ todo.created | date: 'mediumDate' }} -- {{todo.created | todoDays}} days ago <br>
     <button ng-click="toggleDone(todo)">completed: {{todo.done}}</button>
